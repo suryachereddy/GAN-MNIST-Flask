@@ -3,17 +3,33 @@
         <title>
             GAN Digit Generator
         </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script type="text/javascript">
-    </script>
+
+        var link = "/generate.png";
+        function message(){
+            document.getElementById("mess").innerHTML="Wow! This is better than my handwritting xD"
+        }
+        function gen() {
+            document.getElementById("mess").innerHTML="Generating..."
+            var d = new Date();
+            var c ="/"+ d.getTime() + "/" + link;
+            document.getElementById("image").innerHTML = "<img src=" + c + "  height='70%' onload='message()'/>";
+            }
+
+
+        </script>
     </head>
     <body>
         <h1 style="margin-top: 1%; text-align: center;font-size:200%;font-weight: bolder;">Hand Written Digit Generator Trained using Deep Generative Adversial Network</h1>
         <div style="margin-left: 5%; padding: 2%;align-items:center ;text-align: center;">
             <div style="margin-top:2% ;align-items: center;">
                 <div style="padding: 3%;">
-                    <button class="btn btn-success" onclick="handleImage()">Generate New!</button>
+                    <button class="btn btn-success" onclick="gen()">Generate any digit between 0-9!</button>
                 </div>
-                <iframe src={{url_for("generate")}} height="200" width="300"></iframe>
+                <h6 id="mess"></h6>
+                <span id="image"></span>
             </div>
             <footer><a href="https://github.com/suryachereddy/Tensorflow_MNIST_Web"><img src="https://image.flaticon.com/icons/svg/25/25231.svg" style="height: 7%;"  alt="Github"></a> Check out the GitHub repository. (drop a star if you like the work)</footer>
         </div>

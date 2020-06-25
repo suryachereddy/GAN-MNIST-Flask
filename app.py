@@ -19,8 +19,8 @@ generator = tf.keras.models.load_model('gen_model')
 def index():
     return render_template('index.html')
 
-@app.route("/generate.png")
-def generate():
+@app.route("/<int:num>/generate.png")
+def generate(num=None):
     
     fig = create_figure()
     output = io.BytesIO()
