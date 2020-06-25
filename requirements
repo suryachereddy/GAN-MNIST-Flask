@@ -3,3 +3,4 @@ numpy
 tensorflow-cpu==2.2.0
 Pillow==7.1.2
 matplotlib==3.2.2
+gunicorn
