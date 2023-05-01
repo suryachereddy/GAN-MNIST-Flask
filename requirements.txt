@@ -1,4 +1,4 @@
-Flask==1.1.2
+Flask==2.3.2
 numpy
 tensorflow-cpu==2.2.0
 Pillow==7.1.2
